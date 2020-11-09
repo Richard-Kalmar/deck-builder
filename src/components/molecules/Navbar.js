@@ -5,12 +5,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Button from "./Building-blocks/Button;"
-import Home from "./Pages/Home.js";
-import About from "./Pages/About.js";
-import LogIn from "./Pages/LogIn.js";
-import SignUp from "./Pages/SignUp.js";
-import MyDecks from "./Pages/MyDecks.js";
+import Button from "src/components/atoms/Button.js";
+import Home from "src/components/pages/Home.js";
+import About from "src/components/pages/About.js";
+import LogIn from "src/components/pages/LogIn.js";
+import SignUp from "src/components/pages/SignUp.js";
+import MyDecks from "src/components/pages/MyDecks.js";
 
 
 class Navbar extends Component {
