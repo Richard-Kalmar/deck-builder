@@ -1,12 +1,14 @@
 
 import './App.css';
-import Navbar from 'src/components/molecules/Navbar.js';
+import Navbar from './components/molecules/Navbar';
+import Magic from './components/pages/Magic';
 function App() {
   return (
     <div className="App">
-    
-
       <Navbar />
+      <Magic />
+
+
     </div>
   );
 }

@@ -5,12 +5,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Button from "src/components/atoms/Button.js";
-import Home from "src/components/pages/Home.js";
-import About from "src/components/pages/About.js";
-import LogIn from "src/components/pages/LogIn.js";
-import SignUp from "src/components/pages/SignUp.js";
-import MyDecks from "src/components/pages/MyDecks.js";
+import Button from "../atoms/Button.js";
+import Home from "../pages/Home.js";
+import About from "../pages/About.js";
+import LogIn from "../pages/LogIn.js";
+import SignUp from "../pages/SignUp.js";
+import MyDecks from "../pages/MyDecks.js";
 
 
 class Navbar extends Component {
@@ -24,8 +24,8 @@ class Navbar extends Component {
     }
   render(){  
   return (
+        this.logedIn ? 
     <div className="Navbar">
-        logedIn ? 
         <Router>
           <div>
             <nav>
@@ -54,9 +54,11 @@ class Navbar extends Component {
         </Switch>
           </div>
         </Router>
+    </div>
         
         :
-
+  
+   <div className="Navbar">     
         <Router>
           <div>
             <nav>
