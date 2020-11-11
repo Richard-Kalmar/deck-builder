@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import Button from "../atoms/Button.js";
 import Home from "../pages/Home.js";
@@ -23,9 +24,9 @@ class Navbar extends Component {
       this.setState(state => {return (state.logedIn = false)});
     }
     render(){  
-      console.log(this.logedIn);
+      console.log(this.state.logedIn);
   
-        if (this.logedIn === true){ return(
+       return( this.state.logedIn ?
     <div>
         <Router>
           <div>
@@ -59,7 +60,7 @@ class Navbar extends Component {
         </Router>
     </div>
         
-        );}else{return (
+        :
   
    <div className="Navbar1">     
         <Router>
@@ -97,7 +98,7 @@ class Navbar extends Component {
         </Router>
 
     </div>
-        );}
+        );
 
   }
 }
