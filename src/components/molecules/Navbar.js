@@ -11,59 +11,62 @@ import About from "../pages/About.js";
 import LogIn from "../pages/LogIn.js";
 import SignUp from "../pages/SignUp.js";
 import MyDecks from "../pages/MyDecks.js";
+import "../Style-sheets/navbar.css"
 
 
 class Navbar extends Component {
 
     state = {
-        logedIn: false,
+        logedIn: true,
     }
-
     signOut = () => {
-        this.setState(state => {return (state.logedIn = false)});
+      this.setState(state => {return (state.logedIn = false)});
     }
-  render(){  
-  return (
-        this.logedIn ? 
-    <div className="Navbar">
+    render(){  
+      console.log(this.logedIn);
+  
+        if (this.logedIn === true){ return(
+    <div>
         <Router>
           <div>
-            <nav>
-              <div>
-              <Link to="/">Home</Link>
+            <nav className="Navbar">
+              <div className="link">
+              <Link to="/home">Home</Link>
               </div>
-              <div>
+              <div className="link">
               <Link to="/about">About</Link>
               </div>
-              <div>
+              <div className="link">
                 <Link to="/decks">My decks</Link>
+              </div >
+              <div className="link">                
+              <Button name="Log out" onClick={this.signOut}/>
               </div>
-              <Button name="Log out"/>
             </nav>
 
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/decks">
-            <MyDecks />
-          </Route>
-        </Switch>
+            <Switch>
+              <Route exact path="/home">
+                <Home />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/decks">
+                <MyDecks />
+              </Route>
+            </Switch>
           </div>
         </Router>
     </div>
         
-        :
+        );}else{return (
   
-   <div className="Navbar">     
+   <div className="Navbar1">     
         <Router>
           <div>
-            <nav>
+            <nav className="Navbar">
               <div>
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
               </div>
               <div>
               <Link to="/about">About</Link>
@@ -77,7 +80,7 @@ class Navbar extends Component {
             </nav>
 
         <Switch>
-          <Route path="/">
+          <Route exact path="/home">
             <Home />
           </Route>
           <Route path="/about">
@@ -94,7 +97,8 @@ class Navbar extends Component {
         </Router>
 
     </div>
-  );
+        );}
+
   }
 }
 

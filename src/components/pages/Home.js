@@ -5,16 +5,15 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
-import Button from "../atoms/Button.js";
 import Gwent from './Gwent.js';
 import Heartstone from './Heartstone.js';
 import Magic from './Magic.js';
 function Home() {
     let match = useRouteMatch();
+    console.log(match);
     return (
 
     <div>
-        
             <div className="gametypeContainer">
                 <div className="gametype">
                     <Link to={`${match.url}/magicthegathering`}>Magic The Gathering</Link>

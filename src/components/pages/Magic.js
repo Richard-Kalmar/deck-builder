@@ -9,7 +9,7 @@ class Magic extends Component {
     }
     async componentDidMount() {
         try {
-          let {cardData} = await axios.get('https://api.scryfall.com');
+          let {cardData} = await axios.get('https://api.scryfall.com/cards');
           console.log(cardData);
           this.setState({cardData})
         } catch (error) {
